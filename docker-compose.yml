@@ -3,10 +3,11 @@ services:
   backend:
     build: ./backend
     ports:
-      - "8000-9000:8000"
+      - "8000:8000"
     volumes:
       - ./backend:/app
     command: ["python", "app/main.py"]
+    env_file: .env
     environment:
       - APP_ENVIRONMENT=docker
   frontend:

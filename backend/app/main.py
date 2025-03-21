@@ -233,6 +233,8 @@ class SummaryProcessor:
             logger.error(f"Error during cleanup: {str(e)}", exc_info=True)
 
 # Initialize processor
+if os.getenv("GROQ_API_KEY") is None:
+    raise ValueError("GROQ_API_KEY environment variable must be set to use Groq")
 processor = SummaryProcessor()
 
 # Define tools
