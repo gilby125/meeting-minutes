@@ -9,7 +9,6 @@ services:
     command: ["python", "app/main.py"]
     environment:
       - APP_ENVIRONMENT=docker
-      - GROQ_API_KEY=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
   frontend:
     build: ./frontend
     ports:
